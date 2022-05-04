@@ -1,0 +1,26 @@
+# forward_left_right_backward.py
+ 
+from cyberbot import *
+ 
+#Full speed forward
+bot(18).servo_speed(75)               #Left wheel counterclockwise
+bot(19).servo_speed(-75)              #Right wheel clockwise
+sleep(2000)                           #...for 2 seconds
+ 
+#Turn left in place
+bot(18).servo_speed(-75)              #Left wheel clockwise
+bot(19).servo_speed(-75)              #Right wheel clockwise
+sleep(600)                            #...for 0.6 seconds
+ 
+#Turn right in place
+bot(18).servo_speed(75)               #Left wheel counterclockwise
+bot(19).servo_speed(75)               #Right wheel counterclockwise
+sleep(600)                            #...for 0.6 seconds
+ 
+#Full speed backwards
+bot(18).servo_speed(-75)              #Left wheel clockwise
+bot(19).servo_speed(75)               #Right wheel counterclockwise
+sleep(2000)                           #...for 2 seconds
+ 
+bot(18).servo_speed(None)             #Stop the servos
+bot(19).servo_speed(None)
